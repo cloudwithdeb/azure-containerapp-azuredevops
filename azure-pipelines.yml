@@ -1,0 +1,20 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: Docker@2
+    inputs:
+      containerRegistry: 'cloudwithdeb-dockerhub'
+      repository: 'cloudwithdeb/containerapp-todo'
+      command: 'build'
+      Dockerfile: '**/Dockerfile'
+      tags: 'latest'
+  - task: Docker@2
+    inputs:
+      containerRegistry: 'cloudwithdeb-dockerhub'
+      repository: 'cloudwithdeb/containerapp-todo'
+      command: 'push'
+      tags: 'latest'
