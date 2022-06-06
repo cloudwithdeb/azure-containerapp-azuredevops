@@ -1,6 +1,5 @@
 using ITodoServiceNamespace;
 using Microsoft.AspNetCore.Mvc;
-using TodoModulesNamespace;
 
 namespace TodoControllersNamespace;
 
@@ -18,13 +17,6 @@ public class TodoController : ControllerBase
     public IActionResult GetTodos()
     {
         var _response = _svc.getAllTodos();
-        return Ok(_response);
-    }
-
-    [HttpPost("addTodos")]
-    public IActionResult addTodos([FromBody]TodoItems items)
-    {
-        var _response = _svc.addTodo(items);
         return Ok(_response);
     }
 }

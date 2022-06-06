@@ -1,29 +1,25 @@
 using ITodoServiceNamespace;
-using TodoModulesNamespace;
-using TodoRepositoryNamespace;
-
 namespace TodoNamespace;
 
 public class TodoService : ITodoService
 {
-    public string addTodo(TodoItems todoitems)
+    public string addTodo()
     {
-        TodoRepository._todoitems.Add(todoitems);
         return "Todo added";
     }
 
-    public string deleteTodo(int id)
+    public string deleteTodo()
     {
-        throw new NotImplementedException();
+        return "Todo deleted";
     }
 
-    public List<TodoItems> getAllTodos()
+    public string getAllTodos()
     {
-        return TodoRepository._todoitems;
+        return "Get all todos";
     }
 
-    public string updateTodo(TodoItems todoitems, int id)
+    public string updateTodo()
     {
-        throw new NotImplementedException();
+        return "Update todos";
     }
 }
