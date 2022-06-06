@@ -19,4 +19,11 @@ public class TodoController : ControllerBase
         var _response = _svc.getAllTodos();
         return Ok(_response);
     }
+
+    [HttpGet("addtodos")]
+    public IActionResult AddTodos()
+    {
+        var _response = _svc.addTodo();
+        return Ok(_response);
+    }
 }
